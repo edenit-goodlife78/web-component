@@ -5,7 +5,7 @@ customElements.define('test-menu',
             const topmenu = ['menu1', 'menu2', 'menu3', 'menu4', 'menu5'];
             const submenu = [
                 [],
-                ['menu2-1','menu2-2'],
+                [{link:'index.html',menu:'menu2-1'},{link:"#",menu:'menu2-2'}],
                 [],
                 [],
                 []
@@ -39,20 +39,22 @@ customElements.define('test-menu',
 
         shadow.appendChild(linkElem);
 
-        //subment 달아주기
+        //submenu 달아주기
         let level1 = template.querySelectorAll(".nav-item.level1");
         for(let i=0; i<level1.length ;i++){
             // console.log(level1[i]);
             if(submenu[i].length > 0){
                 let tmpString = "<dl>";
-                submenu[i].forEach(item=> {tmpString+=`<dt class="nav-item level2">${item}</dt>`;});
+                submenu[i].forEach(item=> {tmpString+=`<dt class="nav-item level2" ><a href=${item.link}>${item.menu}</a></dt>`;});
                 level1[i].innerHTML+=tmpString + "</dt>";
 
-                level1[i].addEventListener('mouseover',function(){
+                level1[i].addEventListener('mouseenter',function(){
                     level1[i].querySelector('dl').style.display="block";
+                    console.log("menu mouseenter");
                 })
-                level1[i].addEventListener('mouseout',function(){
+                level1[i].addEventListener('mouseleave',function(){
                     level1[i].querySelector('dl').style.display="none";
+                    console.log("menu mouseleave");
                 })
 
             }
