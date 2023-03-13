@@ -8,7 +8,7 @@ nav dt.nav-item.level1:hover{background-color: beige;}
 nav dt.nav-item.level1 dl{
     display:none;
     position: fixed; 
-    top: 156px;
+    top: 100px;
     left: 0;
     width: 100%;
     background-color:#777;
