@@ -5,7 +5,13 @@ nav dt.nav-item{flex-grow:1}
 nav dt.nav-item dl{padding:0}
 nav dt.nav-item.level1{text-align: center;padding:40px 0 36px 0;}
 nav dt.nav-item.level1:hover{background-color: beige;}
-nav dt.nav-item.level1 dl{display:none;    position: fixed;
+nav dt.nav-item.level1 dl{
+    display:none;
+    position: fixed; 
     top: 156px;
     left: 0;
-    width: 100%;}
+    width: 100%;
+    background-color:#777;
+    color:#fff;
+}
+nav dt.nav-item.level1 dl dt{height:40px;padding:10px}
